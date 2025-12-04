@@ -1,4 +1,7 @@
-﻿namespace AdventOfCode2025.Advent;
+﻿using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+
+namespace AdventOfCode2025.Advent;
 
 partial class MySolutions
 {
@@ -36,15 +39,48 @@ partial class MySolutions
         return sumOfBadIDs; // 19391221415 too low
     }
 
-    public static int SolveDayTwoPlus()
+    public static long SolveDayTwoPlus()
     {
-        return 1;
-    }
-}
+        long sumOfBadIDs = 0;
 
-public class Reverser // dont ask
-{
-    public string Reverse(string text)
+        using (StreamReader sr = new StreamReader("Src/DayTwo.txt"))
+        {
+            var myIDs = new HashSet<string>(sr.ReadToEnd().Split(','));
+
+            foreach (var myIdRange in myIDs)
+            {
+                var myRealId = myIdRange.Split('-');
+                long.TryParse(myRealId[0], out long x);
+                long.TryParse(myRealId[1], out long y);
+
+                for (long i = x; i < y; i++)
+                {
+                    string myNumber = i.ToString();
+                    string tool = "";
+                    foreach (var digit in myNumber)
+                    {
+                        string temp = myNumber;
+                        tool += digit;
+                        if (tool.Length > myNumber.Length / 2)
+                        {
+                            break;
+                        }
+                        
+                        if (temp.Replace(tool, String.Empty) == String.Empty)
+                        {
+                            sumOfBadIDs += i;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        return sumOfBadIDs; // 48631958998 too high
+    }
+
+
+    public static string Reverse(string text) // used for 
     {
         char[] cArray = text.ToCharArray();
         string reverse = String.Empty;

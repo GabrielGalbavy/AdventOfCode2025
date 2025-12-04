@@ -6,7 +6,7 @@ public class LaunchPad
 {
     public static void Main(string[] args)
     {
-        var result = MySolutions.SolveDayTwo();
+        var result = MySolutions.SolveDayTwoPlus();
         Console.WriteLine(result);
     }
 }
