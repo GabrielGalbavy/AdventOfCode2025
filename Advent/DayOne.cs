@@ -1,11 +1,11 @@
 ﻿namespace AdventOfCode2025.Advent;
 
-partial class MyProgram
+partial class MySolutions
 {
     public static int SolveDayOne()
     {
-        int number = 50;
-        int pointingZero = 0;
+        var number = 50;
+        var pointingZero = 0;
         using (StreamReader sr = new StreamReader("Src/DayOne.txt"))
         {
             string? line;
@@ -17,6 +17,7 @@ partial class MyProgram
                 {
                     case 'R': // +
                         number = (number + shift) % 100;
+
                         break;
                     case 'L':
                         if (number - shift < 0)
@@ -41,8 +42,48 @@ partial class MyProgram
         return pointingZero;
     }
 
-    public static string DayOnePlus()
+    public static int SolveDayOnePlus()
     {
-        return "Nothing to see here.";
+        int number = 50;
+        int passingZero = 0;
+        using (StreamReader sr = new StreamReader("Src/DayOne.txt"))
+        {
+            string? line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                int.TryParse(line.Remove(0, 1), out int shift);
+
+                if (line[0] == 'R')
+                {
+                    do
+                    {
+                        number++;
+                        if (number == 100)
+                        {
+                            number = 0;
+                            passingZero++;
+                        }
+
+                        shift--;
+                    } while (shift != 0);
+                }
+                else
+                {
+                    do
+                    {
+                        number--;
+                        if (number == -1)
+                        {
+                            passingZero++;
+                            number = 99;
+                        }
+
+                        shift--;
+                    } while (shift != 0);
+                }
+            }
+        }
+
+        return passingZero; // 6392 too much
     }
 }
