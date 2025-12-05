@@ -80,7 +80,7 @@ partial class MySolutions
     }
 
 
-    public static string Reverse(string text)
+    public static string ReverseString(string text)
         // used for Day 2 part 1 solution that I scraped, may come in handy later
     {
         char[] cArray = text.ToCharArray();
