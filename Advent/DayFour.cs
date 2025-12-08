@@ -2,7 +2,7 @@
 
 static partial class MySolutions
 {
-    public static int SolveDayFour()
+    internal static int SolveDayFour()
     {
         // for this solution to work you must first surround the input text block in dots,
         // so you don't read characters outside the input
@@ -64,7 +64,7 @@ static partial class MySolutions
         return freeRows;
     }
 
-    public static long SolveDayFourPlus()
+    internal static long SolveDayFourPlus()
     {
         using StreamReader sr = new StreamReader("Src/DayFour.txt");
         var firstToTheKey = new List<char[]>(); //

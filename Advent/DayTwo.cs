@@ -1,11 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
-
-namespace AdventOfCode2025.Advent;
+﻿namespace AdventOfCode2025.Advent;
 
 static partial class MySolutions
 {
-    public static long SolveDayTwo()
+    internal static long SolveDayTwo()
     {
         long sumOfBadIDs = 0;
 
@@ -39,7 +36,7 @@ static partial class MySolutions
         return sumOfBadIDs; // 19391221415 too low
     }
 
-    public static long SolveDayTwoPlus()
+    internal static long SolveDayTwoPlus()
     {
         long sumOfBadIDs = 0;
 

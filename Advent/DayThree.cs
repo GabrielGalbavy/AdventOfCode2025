@@ -5,7 +5,7 @@ namespace AdventOfCode2025.Advent;
 
 static partial class MySolutions
 {
-    public static long SolveDayThree()
+    internal static long SolveDayThree()
     {
         long outputPower = 0;
 
@@ -39,7 +39,7 @@ static partial class MySolutions
         return outputPower;
     }
 
-    public static double SolveDayThreePlus()
+    internal static double SolveDayThreePlus()
     {
         using StreamReader sr = new StreamReader("Src/DayThree.txt");
         double sum = 0;

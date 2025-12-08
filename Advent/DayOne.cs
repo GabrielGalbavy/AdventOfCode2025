@@ -2,7 +2,7 @@
 
 static partial class MySolutions
 {
-    public static int SolveDayOne()
+    internal static int SolveDayOne()
     {
         var number = 50;
         var pointingZero = 0;
@@ -42,7 +42,7 @@ static partial class MySolutions
         return pointingZero;
     }
 
-    public static int SolveDayOnePlus()
+    internal static int SolveDayOnePlus()
     {
         int number = 50;
         int passingZero = 0;
