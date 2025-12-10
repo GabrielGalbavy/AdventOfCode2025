@@ -8,7 +8,7 @@ public static class LaunchPad
     {
         // select which day you want to solve
 
-        var result = MySolutions.SolveDayFivePlus();
+        var result = MySolutions.SolveDaySix();
         Console.WriteLine(result);
     }
 }
