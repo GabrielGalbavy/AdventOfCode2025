@@ -73,7 +73,8 @@ static partial class MySolutions
         long freeRowsLast = -1;
 
         // IDE is screaming here to check for null,
-        // but we don't give a fck cuz we know it can't be null
+        // but we don't give a damn cuz we know it can't be null
+        // we are smarter
 
         while (!sr.EndOfStream)
         {
